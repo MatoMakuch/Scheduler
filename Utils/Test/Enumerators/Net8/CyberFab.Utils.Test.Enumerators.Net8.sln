@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Utils.Test.Enumerators.Net8", "CyberFab.Utils.Test.Enumerators.Net8\CyberFab.Utils.Test.Enumerators.Net8.csproj", "{36327116-58BC-4336-BB81-DF91A8286802}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Utils.Enumerators.Net8", "..\..\..\Enumerators\Net8\CyberFab.Utils.Enumerators.Net8\CyberFab.Utils.Enumerators.Net8.csproj", "{75126A57-2389-4CD9-AB81-4B056D9572FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36327116-58BC-4336-BB81-DF91A8286802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36327116-58BC-4336-BB81-DF91A8286802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36327116-58BC-4336-BB81-DF91A8286802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36327116-58BC-4336-BB81-DF91A8286802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75126A57-2389-4CD9-AB81-4B056D9572FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75126A57-2389-4CD9-AB81-4B056D9572FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75126A57-2389-4CD9-AB81-4B056D9572FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75126A57-2389-4CD9-AB81-4B056D9572FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC36D811-F3FF-4611-9A8C-452F44012BFC}
+	EndGlobalSection
+EndGlobal

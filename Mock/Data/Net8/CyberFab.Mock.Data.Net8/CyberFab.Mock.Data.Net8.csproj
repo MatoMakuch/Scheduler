@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Database\Production\Models\Net8\CyberFab.Database.Production.Models.Net8\CyberFab.Database.Production.Models.Net8.csproj" />
+    <ProjectReference Include="..\..\..\..\Images\Net8\CyberFab.Images.Net8\CyberFab.Images.Net8.csproj" />
+    <ProjectReference Include="..\..\..\..\Utils\Enumerators\Net8\CyberFab.Utils.Enumerators.Net8\CyberFab.Utils.Enumerators.Net8.csproj" />
+  </ItemGroup>
+
+</Project>

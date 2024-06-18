@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Mock.Data.Net8", "CyberFab.Mock.Data.Net8\CyberFab.Mock.Data.Net8.csproj", "{8E72521F-909D-42A5-9DAB-08F6AEF6B5D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Database.Production.Models.Net8", "..\..\..\Database\Production\Models\Net8\CyberFab.Database.Production.Models.Net8\CyberFab.Database.Production.Models.Net8.csproj", "{6B995D6B-857C-4FF4-9700-37CA0D7AC723}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Utils.Enumerators.Net8", "..\..\..\Utils\Enumerators\Net8\CyberFab.Utils.Enumerators.Net8\CyberFab.Utils.Enumerators.Net8.csproj", "{B89ED2FC-CFA3-4FFB-A126-7FDC74ACBD84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Images.Net8", "..\..\..\Images\Net8\CyberFab.Images.Net8\CyberFab.Images.Net8.csproj", "{43220AB6-98C1-46DE-8B1D-452FE4BB9691}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E72521F-909D-42A5-9DAB-08F6AEF6B5D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E72521F-909D-42A5-9DAB-08F6AEF6B5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E72521F-909D-42A5-9DAB-08F6AEF6B5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E72521F-909D-42A5-9DAB-08F6AEF6B5D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B995D6B-857C-4FF4-9700-37CA0D7AC723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B995D6B-857C-4FF4-9700-37CA0D7AC723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B995D6B-857C-4FF4-9700-37CA0D7AC723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B995D6B-857C-4FF4-9700-37CA0D7AC723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89ED2FC-CFA3-4FFB-A126-7FDC74ACBD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89ED2FC-CFA3-4FFB-A126-7FDC74ACBD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89ED2FC-CFA3-4FFB-A126-7FDC74ACBD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89ED2FC-CFA3-4FFB-A126-7FDC74ACBD84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43220AB6-98C1-46DE-8B1D-452FE4BB9691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43220AB6-98C1-46DE-8B1D-452FE4BB9691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43220AB6-98C1-46DE-8B1D-452FE4BB9691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43220AB6-98C1-46DE-8B1D-452FE4BB9691}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1ACBD212-80C5-47C3-B6DE-97D5977F25E7}
+	EndGlobalSection
+EndGlobal

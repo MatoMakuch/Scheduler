@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage{enumitem}
+
+\begin{document}
+	
+	\title{Scheduler}
+	\author{Martin Makuch}
+	\date{\today}
+	
+	\begin{document}
+		
+	\maketitle
+	
+	\section*{Úvod}
+	V tejto práci predstavujem výsledky svojho ročníkového projektu s názvom "Scheduler," ktorý bol vyvíjaný pre firmu MicroStep spol. s r. o. Cieľom projektu je navrhnúť a implementovať algoritmus na efektívne plánovanie rozvrhov práce v prostredí typu 'Job Shop'. Tento typ problému je charakterizovaný množinou prác a strojov, kde každá práca pozostáva z postupnosti operácií, ktoré musia byť vykonané na konkrétnych strojoch v stanovenom poradí. Projekt sa zameriava na optimalizáciu časového rozvrhu tak, aby boli všetky práce vykonané v čo najkratšom čase. 
+	
+	Cieľom projektu je nasadenie v reálnom prostredí výroby v Hríňovej a Partizánskom, kde sa projekt bude testovať. To umožní overiť efektívnosť navrhnutého riešenia v praxi a identifikovať prípadné nedostatky či oblasti na zlepšenie.
+	
+	\section*{Klasifikácia problému}
+	Nech \( m, n \) sú ľubovoľné nezáporné premenné. Potom množina \( M = \{ M_1, M_2, \ldots, M_m \} \) označuje stroje. Množina \( J = \{ J_1, J_2, \ldots, J_n \} \) označuje práce. Pre každú prácu \( J_j \) z množiny \( J \) definujeme čísla: \( m_j \) označujúce počet operácii; \( p_{j1}, p_{j2}, \ldots, p_{jm_j} \) označujúce doby spracovania; \( d_j \) označujúce čas ukončenia práce; \( w_j \) označujúce relatívnu dôležitosť.
+	
+	\section*{Nastavenie strojov}
+	Problém, ktorý riešime je v literatúre označovaný ako 'Job Shop'. Každá práca \( J_j \) z množiny \( J \) pozostáva z usporiadanej \( m_j \)-tice operácii \( ( O_{j1}, O_{j2}, \ldots, O_{jm_j} ) \), kde číslo \( m_j \) reprezentuje počet operácii, z ktorých práca \( J_j \) pozostáva, a kde sa operácia \( O_{ji} \) musí v poradí vykonať na stroji \( \mu_{ji} \) za čas \( p_{ji} \). Pritom pre \( i = 1, 2, \ldots, m_j \) platí, že \( \mu_{i-1} \neq \mu_i \).
+	
+	\section*{Charakteristika prác}
+	V našom prostredí zakazujeme prerušovanie vykonávania jednotlivých operácii. Žiadne ďalšie obmedzenia nateraz nekladieme.
+	
+	\section*{Cieľ}
+	Cieľom je naplánovať rozvrh pre optimálne vykonanie prác (za optimálne riešenie budeme považovať také, ktoré v najkratšom čase vykoná všetky práce).
+	
+	\section*{Brute-force algoritmus}
+	Keďže každá práce pozostáva z nejakej postupnosti operácii, kde každá z nich musí byť vykonaná na práve jednom stroji - môžeme usporiadať práce podľa toho na akom stroji sa majú vykonať.
+	
+	Zjavne v každom rozvrhu platí, že ak sa ľubovoľné dve operácie musia vykonať na jednom stroji, tak niektorá z nich sa musí vykonať skôr. Výmenou poradia ľubovoľných dvoch operácii teda dostaneme nový rozvrh. (Výmeny poradia jednotlivých strojov uvažovať nebudeme vzhľadom k tomu, že stroje pracujú nezávisle.)
+	
+	Vo všeobecnosti by sme počet všetkých rôznych rozvrhov (teda takých, ktoré sa líšia poradím nejakých dvoch operácii prislúchajúcich jednému stroju) mohli zapísať následovne: nech \( [M_i] \) označuje triedu ekvivalencie na množine všetkých operácii \( O = O_1 \cup \ldots \cup O_n \); potom \( \prod_{i=1}^{m} |[M_i]|! \) vyjadruje hľadaný počet.
+	
+	Výsledný rozvrh aj s časmi vykonania jednotlivých operácii zostrojíme následovne:
+	\begin{enumerate}[label=\arabic*.]
+		\item rozdelíme operácie do radov podľa strojov, na ktorých sa majú vykonať, v poradí, v ktorých sa majú vykonať;
+		\item opakujeme v cykle:
+		\begin{enumerate}[label*=\arabic*.]
+			\item počínajúc ľubovoľným strojom iterujeme všetky stroje; môžu nastať dva prípady:
+			\begin{enumerate}[label*=\arabic*.]
+				\item operácia na začiatku rady sa môže vykonať t.j. všetky predchádzajúce operácie sa už vykonali:
+				\begin{enumerate}[label*=\arabic*]
+					\item vyberieme opráciu z rady a naplánujeme ju,
+					\item pokračujeme na ďalšou opráciou v rade;
+				\end{enumerate}
+				\item operácia na začaitku rady sa ešte vykonať nemôže t.j. niektorá z predchádzajúcich operácii sa ešte nevykonala,
+				\begin{enumerate}[label*=\arabic*]
+					\item prejdeme na ďalší stroj;
+				\end{enumerate}
+			\end{enumerate}
+			\item ak sa nenaplánovala žiadna operácia, ukončíme cyklus;
+		\end{enumerate}
+		\item po skončení cyklu môžu nastať dva prípady:
+		\begin{enumerate}[label*=\arabic*]
+			\item všetky operácie sú naplánované, vrátime maximum z časov ukončenia všetkých operácii;
+			\item nejaká operácia nie je naplánovaná; vrátime nekonečno;
+		\end{enumerate}
+	\end{enumerate}
+
+	Algoritmu postupne prechádza cez rady operácii prislúchajúce jednotlivým strojom a operáciu vyberie (naplánujeme) ak operácia, ktorá jej má predchádzať je už naplánovaná. 
+	
+	(Stačí si pri tom pamätať iba poslednú naplánovanú operáciu pre každú prácu.) Počiatočný čas vykonania operácie sa vypočíta ako maximum z počiatočného času vykonania poslednej operácie zväčšeného o dĺžku vykonania tej operácie a počiatočného času poslednej operácie vykonanej na danom stroji zväčšeného o dĺžku vykonania tej operácie. (Pre druhé uvedené nám stačí udržiavať pre každý stroj čas ukončenia poslednej operácie na ňom.)
+	
+	\section*{Nedostatky}
+	S uvažovaným modelom sa síce pracuje príjmne, pre jeho jednoduchosť, je však v praxi len sotva využiteľný. 
+	
+	V ďaľších sekciách si predstavíme iné, všeobecnejšie, spôsoby pohľadu na operácie. Potešujúce je, že mnohé myšlienky, použité pre tento model, budeme vedieť aplikovať aj na všeobecenjšie verzie problému.
+	
+	\section*{Zovšeobecnenie}
+	Máme výrobnú linku obsahujúcu štyri pracoviská: rezanie, vŕtanie, ohýbanie a skladanie. Proces výroby prebieha nasledovne:
+	
+	\begin{enumerate}
+		\item Na \textbf{prvom pracovisku} (rezanie) vyrežeme z kusu typu \textbf{A} dva kusy typu \textbf{B}.
+		\item \textbf{Druhé pracovisko} (vŕtanie) spracuje jeden z kusov typu \textbf{B}, čím vznikne kus typu \textbf{B'}.
+		\item \textbf{Tretie pracovisko} (ohýbanie) spracuje druhý kus typu \textbf{B}, čím vznikne kus typu \textbf{B''}.
+		\item Na \textbf{štvrtom pracovisku} (skladanie) sa z kusov \textbf{B'} a \textbf{B''} zostaví jeden kus typu \textbf{C}.
+	\end{enumerate}
+	
+	Malo by byť vidieť, že takýto problém nevieme v základnom modeli vyjadriť. konkrétne nám robí problém vyjdariť fakt, že niektoré joby, môžu medzi sebou zdieľať operácie.
+	
+	\section*{Úpravený brute-force algoritmus}
+	Pri priamočiarej úprave reprezentácie následností operácii ako orientovaného acyklického grafu sa pôvodný algoritmus zmení iba v bode, kedy zisťuje, či je možné naplánovať ďalšiu opráciu. O upravenom algoritmne potom vieme argumentovať o jeho správnosti analogicky.
+	
+	\subsection*{Pozorovanie}
+	Upravený algoritmus, ako sme aj ukázali, funguje naďalej. Otázka je ako by sme vedeli znížiť počet všetkých vyskúšaných rozvrhov?
+	
+	(...)
+	
+	\section*{Operácie ako vstupno-výstupné relácie}
+	Ďalšie zovšeobecnenie, ktoré vieme spraviť je zmena pohľadu na operácie ako na čisto matematický objekt. Toto zovšeobecenenie sa môže ukázať ako kľúčové pri nasadzovaní techník lineárneho programovania.
+	
+	(...)
+	
+\end{document}
