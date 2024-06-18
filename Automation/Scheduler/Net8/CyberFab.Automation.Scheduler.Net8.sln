@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Automation.Scheduler.Net8", "CyberFab.Automation.Scheduler.Net8\CyberFab.Automation.Scheduler.Net8.csproj", "{3E40D039-E66D-46CE-8B25-21140EFD046D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Utils.Enumerators.Net8", "..\..\..\Utils\Enumerators\Net8\CyberFab.Utils.Enumerators.Net8\CyberFab.Utils.Enumerators.Net8.csproj", "{EB4F499F-97CD-4BD7-9A6D-2B9E9CF5692E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberFab.Database.Automation.Models.Net8", "..\..\..\Database\Automation\Models\Net8\CyberFab.Database.Automation.Models.Net8\CyberFab.Database.Automation.Models.Net8.csproj", "{7D3FD1A7-F6EC-4F47-A275-3CB825BFD429}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E40D039-E66D-46CE-8B25-21140EFD046D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E40D039-E66D-46CE-8B25-21140EFD046D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E40D039-E66D-46CE-8B25-21140EFD046D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E40D039-E66D-46CE-8B25-21140EFD046D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4F499F-97CD-4BD7-9A6D-2B9E9CF5692E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4F499F-97CD-4BD7-9A6D-2B9E9CF5692E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4F499F-97CD-4BD7-9A6D-2B9E9CF5692E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4F499F-97CD-4BD7-9A6D-2B9E9CF5692E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3FD1A7-F6EC-4F47-A275-3CB825BFD429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3FD1A7-F6EC-4F47-A275-3CB825BFD429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3FD1A7-F6EC-4F47-A275-3CB825BFD429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3FD1A7-F6EC-4F47-A275-3CB825BFD429}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2809D2A-40D6-453D-8FF9-7C2E8374541C}
+	EndGlobalSection
+EndGlobal

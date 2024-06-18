@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Utils\Enumerators\Net8\CyberFab.Utils.Enumerators.Net8\CyberFab.Utils.Enumerators.Net8.csproj" />
+    <ProjectReference Include="..\..\..\..\Utils\Graph\Net8\CyberFab.Utils.Graph.Net8\CyberFab.Utils.Graph.Net8.csproj" />
+  </ItemGroup>
+
+</Project>
